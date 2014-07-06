@@ -1,0 +1,325 @@
+<!doctype html>
+<html dir="rtl">
+<head>
+<title>حلی‌نت ۸ام - مرحله‌ی حضوری</title>
+<meta charset="utf-8" />
+<style type="text/css">
+@font-face {
+	font-family: 'WYekan';
+	src: url('files/WebYekan.eot?#iefix') format('embedded-opentype'),
+url('files/WebYekan.woff') format('woff'),
+url('files/WebYekan.ttf') format('truetype'),
+url('files/WebYekan.svg') format('svg');
+}
+html {
+	direction: rtl;
+}
+
+body {
+	text-align: right;
+	font-family: WYekan, "B Yekan", "2 Yekan", Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	background: #ececec;
+	color: #3d3d3d;
+	padding: 0;
+	margin: 0;
+	text-shadow: 0 1px #fff;
+}
+
+#container {
+	width: 540px;
+	margin: 0 auto;
+	background: #f7f7f7;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #ccc;
+	padding: 20px;
+	min-height: 100%;
+}
+
+h1 {
+	margin: 5px 2px;
+	font-size:32px;
+}
+
+h2 {
+	margin: 2px;
+	font-size: 24px;
+}
+
+img {
+	width:auto;
+	height: auto;
+	max-width:100%;
+	background:#fff;
+	padding:4px;
+	border-radius:4px;
+	border: 1px solid #ccc;
+	display:block;
+	margin: 5px auto;
+	transition: 0.5s;
+}
+
+img:hover {
+	box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+.syntax-container {
+	direction:ltr;
+	text-align:left;
+	text-shadow: none;
+	background:#fff;
+	border: 1px solid #ccc;
+	padding:5px 0 0 0;
+	border-radius: 4px;
+}
+</style>
+<script src="files/jquery-1.6.min.js"></script>
+<script src="files/jquery-syntax/jquery.syntax.js"></script>
+<script src="files/jquery-syntax/jquery.syntax.cache.js" type="text/javascript"></script>
+
+<script>
+$(function()
+{
+	jQuery.syntax({
+		root: 'files/jquery-syntax/',
+		theme: 'grey'
+	});
+});
+</script>
+</head>
+<body>
+<div id="container">
+<h1>حلی‌نت هشتم - مرحله‌ی حضوری</h1>
+<br>
+<h2>پرسش نخست</h2>
+<p>
+	متن سوال:<br>
+	<img src="files/p1.jpg" alt="پرسش نخست" />
+	<br>پاسخ:<br>
+	خوب این سوال از نظر من ساده‌ترین سوالشون بود، شما فقط نیازه که ببینی که طلسم کجا میره و دقیقن مسیرش رو طی کنی! به همین سادگی به همین خوشمزگی!:)
+	<br>
+	کد سوال:
+    <pre class="syntax brush-clang">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+	string s;
+	cin>>s;
+	int n = s.length();
+	bool a[n];
+	for(int i = 0; i < n; ++i)
+	{
+		a[i] = (s[i] == 'X');
+	}
+	int mx = 1, m = 0;
+	while(m != -1 && m != n)
+	{
+		if(a[m])
+		{
+			mx *= -1;
+		}
+		a[m] = !a[m];
+		m += mx;
+	}
+	if(m == -1)
+		cout<<"YES";
+	else
+		cout<<"NO";
+    return 0;
+}
+    </pre>
+</p>
+<p>
+	<h2>پرسش دوم:</h2>
+    <br>
+    متن سوال:
+    <img src="files/p2.jpg" alt="پرسش ۲" />
+    حل سوال:
+    <br>
+    خوب من الآن برای اولین دفعه‌ام بود که سوال رو خوندم! :D چون توی حلی‌نت این سوال رو دوستم حل کرد وقتی داشتم سوال ۱ رو حل میکردم و اصلن نخوندم روی سوال!
+    <br>
+    ولی الآن خوندم و حل کردم!
+    <br>
+    روش حل من به این صورت هست:
+    من طبق استدلالی که کردم با خودم به این نتیجه رسیدم، صندلی های یک نفره همیشه میتونن آب‌میوه‌اشون رو بخورن، اولین صندلی دو نفره هم میتونه ۲ آب میوه بخوره.<br>
+    ولی اگه کمی دقت کنید می‌بینید بعد از اولین صندلی دو نفره نفر دوم‌اش دیگه میمون‌ها آب میوه‌اشون رو از سمت چپشون نمیخورن و مجبورن بزارن روی صندلی سمت راستشون. به همین دلیل بعد از اولین جفت صندلی دونفره بقیه‌ی صندلی دو نفره‌ها فقط یک آب‌میوه میتونن بخورن. اگه بخواهیم این اتفاق نیوفته یا باید نفر دوم صندلی اول یا نفر بعد از اون آب‌میوه نخوره که به جای بعدی‌ها این‌ها تلف میشن و در کل در مجموع فرقی ایجاد نمیشه پس جواب درسته!
+    <br>
+    کد پاسخ:
+    <pre class="syntax brush-clang">
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+	string s;
+	cin&gt;&gt;s;
+	int n = s.length();
+	int c = 0;
+	int l = 0;
+	bool kharab = 0;
+	for(int i = 0; i &lt; n; ++i)
+	{
+		if((s[i] == 'L' &amp;&amp; l == 1)) kharab = 1;
+		if(s[i] == 'S')
+			c++;
+		else
+		{
+			l++;
+			l %= 2;
+			if(!kharab || l == 0)
+				c++;
+		}
+	}
+	cout&lt;&lt;c;
+	return 0;
+}
+    </pre>
+</p>
+<h2>پرسش سوم</h2>
+<p>
+	متن سوال:
+	<img src="files/p3.jpg" alt="پرسش سوم" />
+    <br>
+    راه حل:<br>
+    خوب این سوال رو من توی علامه حلی جوابش رو به دست آوردم ولی به دلیل استرس زیادی که داشتم هرکاری کردم نتونستم کدش رو بزنم! :D :-O !
+    <br>
+    خوب بگذریم.
+    اگه یه تعداد تست انجام بدید متوجه میشید که عدد kام میتونه از جایگاه ۱ تا 2k-1 بیاد. (k از ۱ شروع میشه).
+    خوب پس عدد اول فقط میتونه توی ۱ باشه.
+    عدد دوم توی ۲ و ۳ (چون یک گرفته شده)
+    و ...
+    (البته این تقریبن بدیهی هست که چرا تا 2k-1 بیشتر نمیتونه باشه.)
+    و همچنین باید بدونیم که 2k-1 باید <= n باشه وگرنه خود n.
+    خوب دیگه جواب رو گفتم بریم سراغ کد سوال.<br>
+    کد سوال: <br>
+	<pre class="syntax brush-clang">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int n, delta = 1000000000 + 7; // 10^9+7
+int getk(int i)
+{
+	int k = (2*i)-1;
+	if(k &gt; n) k = n;
+	return k;
+}
+int main()
+{
+	cin&gt;&gt;n;
+	long long c = 1;
+	int k;
+	for(int i = 1; i &lt;= n;i++)
+	{
+		k = getk(i);
+		c *= k-i+1;
+		c %= delta;
+	}
+	cout&lt;&lt;c;
+	return 0;
+}
+	</pre>
+</p>
+<h2>پرسش چهارم</h2>
+<p>
+	متن سوال:
+    <img src="files/p4.jpg" alt="پرسش چهارم" />
+    <br>
+    راه حل:<br>
+    خوب این سوال اگه بلد بودید sort کد بزنید یا تابع sort بلد بودید تقریبن ساده بود.<br>
+    ما باید قابلمه‌ها رو به ترتیب مساحتشون درون هم قرار بدیم و بعد محاسبه کنیم دیگه که چقدر آب توش جمع شده و چقدر از قابلمه‌ی کوچکتر توی قابلمه‌ی ماست.
+    <br>
+    کد سوال:<br>
+<pre class="syntax brush-clang">
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+
+int main()
+{
+	int n, c = 0, d;
+	cin&gt;&gt;n;
+	pair &lt;int, int&gt; a[n];
+	for(int i = 0; i &lt; n; i++)
+	{
+		cin&gt;&gt;a[i].second&gt;&gt;a[i].first;
+	}
+	sort(a,a+n);
+	c = a[0].first * a[0].second;
+	for(int i = 1; i &lt; n; i++)
+	{
+		if(a[i-1].second &gt; a[i].second) d = a[i].second; else d = a[i-1].second;
+		c += (a[i].first*a[i].second)-(a[i-1].first*d);
+	}
+	cout&lt;&lt;c;
+	return 0;
+}
+</pre>
+</p>
+<h2>سوال پنجم</h2>
+<p>
+	متن سوال:
+    <img src="files/p5.jpg" alt="پرسش پنجم" />
+    <br>
+    راه حل:<br>
+    خوب این فقط نیاز هست بدونید حدس گلدباخ چیه! در این حدس گفته شده که هر عدد زوج برابر با جمع ۲ عدد اول و هر عدد فرد برابر با جمع ۳ عدد اول هست.
+    <br>
+    وقتی این رو بدونید با یک حالت بندی ساده حل میشه دیگه.
+    برای رفتن خر پرنده باید کامل x ها رو طی کنه بعد بره سراغ y ها (البته کلن فرقی نداره‌ها)
+    <br>
+    من یه تابع نوشتم که با دادن یک a به اون میگه که خر میتونه با چند حرکت بهش برسه به این صورت که یه حالت بندی ساده کردم. اگه صفر بود صفر. اگه اول بود ۱. اگه فردی بود که - ۲ یا +2 اول میشد ۲. اگه فرد بود ۳ و اگه زوج بود ۲.
+    حالا این تابع رو برای x و y استفاده میکنیم و باهم جمع میزنیم.
+    <br>
+    کد سوال:
+    <br>
+<pre class="syntax brush-clang">
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+bool isaval(int a)
+{
+	for(int i = 2; i &lt;= a/2; i++) if(a%i == 0) return false;
+	return true;
+}
+
+int javab(int a)
+{
+	if(a == 1) return 2;
+	if(a == 0) return 0;
+	if(isaval(a)) return 1;
+	if(isaval(a-2) || isaval(a+2)) return 2;
+	if(a % 2 == 0) return 2;
+	return 3;
+}
+
+int main()
+{
+	int x,y;
+	cin&gt;&gt;x&gt;&gt;y;
+	x = abs(x);
+	y = abs(y);
+	cout&lt;&lt;javab(x)+javab(y);
+	return 0;
+}
+</pre>
+</p>
+<h2>سوال ششم</h2>
+<p>
+	متن سوال:<br>
+    <img src="files/p6.jpg" alt="پرسش ششم" />
+    <br>
+    راه حل:<br>
+</p>
+</div>
+</body>
+</html>
