@@ -7,10 +7,21 @@
 @font-face {
 	font-family: 'WYekan';
 	src: url('files/WebYekan.eot?#iefix') format('embedded-opentype'),
-url('files/WebYekan.woff') format('woff'),
-url('files/WebYekan.ttf') format('truetype'),
-url('files/WebYekan.svg') format('svg');
+		 url('files/WebYekan.woff') format('woff'),
+		 url('files/WebYekan.ttf') format('truetype'),
+		 url('files/WebYekan.svg') format('svg');
+	font-weight: normal;
 }
+
+@font-face {
+	font-family: 'WYekan';
+	src: url('files/WebYekan.eot?#iefix') format('embedded-opentype'),
+		 url('files/WebYekan.woff') format('woff'),
+		 url('files/WebYekan.ttf') format('truetype'),
+		 url('files/WebYekan.svg') format('svg');
+	font-weight: bold;
+}
+
 html {
 	direction: rtl;
 }
@@ -38,7 +49,7 @@ body {
 
 h1 {
 	margin: 5px 2px;
-	font-size:32px;
+	font-size:28px;
 }
 
 h2 {
@@ -72,6 +83,47 @@ img:hover {
 	padding:5px 0 0 0;
 	border-radius: 4px;
 }
+
+.ltr {
+	display:inline-block;
+	direction:ltr;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+strong {
+	text-shadow: 0 1px 1px rgba(0,0,0,0.9);
+}
+
+.pn {
+	font-size:12px;
+	
+	border-top: 1px dashed #aaa;
+	padding:5px 0 0 0;
+	margin: 20px 0 0 0;
+	font-style:italic;
+}
+
+.smiley {
+	display:inline-block;
+	border: 1px solid #666;
+	border-radius: 50%;
+	-o-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+	transform:rotate(90deg);
+	padding:0;
+	width:14px;
+	height:14px;
+	text-align:center;
+	direction:ltr;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	padding:1px;
+	background:#fff;
+	color:#666;
+	font-style:normal;
+}
 </style>
 <script src="files/jquery-1.6.min.js"></script>
 <script src="files/jquery-syntax/jquery.syntax.js"></script>
@@ -96,7 +148,7 @@ $(function()
 	متن سوال:<br>
 	<img src="files/p1.jpg" alt="پرسش نخست" />
 	<br>پاسخ:<br>
-	خوب این سوال از نظر من ساده‌ترین سوالشون بود، شما فقط نیازه که ببینی که طلسم کجا میره و دقیقن مسیرش رو طی کنی! به همین سادگی به همین خوشمزگی!:)
+	خوب این سوال از نظر من ساده‌ترین سوالشون بود، شما فقط نیازه که ببینی که طلسم کجا میره و دقیقن مسیرش رو طی کنی! به همین سادگی به همین خوشمزگی!<span class="smiley">:)</span>
 	<br>
 	کد سوال:
     <pre class="syntax brush-clang">
@@ -140,7 +192,7 @@ int main()
     <img src="files/p2.jpg" alt="پرسش ۲" />
     حل سوال:
     <br>
-    خوب من الآن برای اولین دفعه‌ام بود که سوال رو خوندم! :D چون توی حلی‌نت این سوال رو دوستم حل کرد وقتی داشتم سوال ۱ رو حل میکردم و اصلن نخوندم روی سوال!
+    خوب من الآن برای اولین دفعه‌ام بود که سوال رو خوندم! <span class="smiley">:D</span> چون توی حلی‌نت این سوال رو دوستم حل کرد وقتی داشتم سوال ۱ رو حل میکردم و اصلن نخوندم روی سوال!
     <br>
     ولی الآن خوندم و حل کردم!
     <br>
@@ -187,7 +239,7 @@ int main()
 	<img src="files/p3.jpg" alt="پرسش سوم" />
     <br>
     راه حل:<br>
-    خوب این سوال رو من توی علامه حلی جوابش رو به دست آوردم ولی به دلیل استرس زیادی که داشتم هرکاری کردم نتونستم کدش رو بزنم! :D :-O !
+    خوب این سوال رو من توی علامه حلی جوابش رو به دست آوردم ولی به دلیل استرس زیادی که داشتم هرکاری کردم نتونستم کدش رو بزنم! <span class="smiley">:D</span> <span class="smiley">:O</span> !
     <br>
     خوب بگذریم.
     اگه یه تعداد تست انجام بدید متوجه میشید که عدد kام میتونه از جایگاه ۱ تا 2k-1 بیاد. (k از ۱ شروع میشه).
@@ -195,7 +247,7 @@ int main()
     عدد دوم توی ۲ و ۳ (چون یک گرفته شده)
     و ...
     (البته این تقریبن بدیهی هست که چرا تا 2k-1 بیشتر نمیتونه باشه.)
-    و همچنین باید بدونیم که 2k-1 باید <= n باشه وگرنه خود n.
+    و همچنین باید بدونیم که 2k-1 باید <span class="ltr"><= n</span> باشه وگرنه خود n.
     خوب دیگه جواب رو گفتم بریم سراغ کد سوال.<br>
     کد سوال: <br>
 	<pre class="syntax brush-clang">
@@ -319,7 +371,53 @@ int main()
     <img src="files/p6.jpg" alt="پرسش ششم" />
     <br>
     راه حل:<br>
+    خوب تنها نکته‌ی مهمی که این سوال داره این هست که از آخر به اول پیش بری نه از اول به آخر چون اگه از اول به آخر بری باید <span class="ltr">O(n^2)</span> مرحله کار انجام بدی ولی اگه از آخر به اول بیای باید <span class="ltr">O(n)</span> کار انجام بدی.
+    <br>
+    کد سوال:<br>
+<pre class="syntax brush-clang">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+	int n, c = 0;
+	cin&gt;&gt;n;
+	int a[n];
+	for(int i = 0;i &lt; n; i++)
+		cin&gt;&gt;a[i];
+	for(int i = n-1; i &gt;= 0; i--)
+	{
+		a[i] += c;
+		c += a[i] / (i+1);
+	}
+	cout&lt;&lt;c;
+	return 0;
+}
+</pre>
 </p>
+<br>
+<br>
+پرسش‌های هفت و هشت رو هنوز موفق به ارائه‌ی کد صحیح براشون نشدم. <span class="smiley">:(</span>
+
+<h2>پرسش هفتم</h2>
+<p>
+	این سوال تقریبا سخت بود و تنها یک نفر حلش کرد!<br />
+	سوال رو ندارم متاسفانه!
+</p>
+<br /><br>
+<h2>پرسش هشتم</h2>
+<p>
+	متن سوال:<br>
+    <img src="files/p8.jpg" alt="پرسش هشتم" />
+    <br>
+</p>
+
+<br>
+<div class="pn">
+	<strong>پ.ن:</strong>
+    این پاسخ‌ها توسط خود بنده ارائه شده در زمانی هم که درست ذهنم کار نمیکرده (حدود ۲ بامداد) پس ممکنه مشکلاتی داشته باشه. <span class="smiley">:)</span>
+</div>
 </div>
 </body>
 </html>
